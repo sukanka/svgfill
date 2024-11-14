@@ -130,6 +130,7 @@ file(GLOB LIB_CPP_FILES src/svgfill.cpp src/arrange_polygons.cpp)
 set(LIB_SRC_FILES ${LIB_H_FILES} ${LIB_CPP_FILES})
 add_library(libsvgfill ${LIB_SRC_FILES})
 target_link_libraries(libsvgfill ${Boost_LIBRARIES} ${BCRYPT_LIBRARIES} ${LIBXML2_LIBRARIES} ${CGAL_LIBRARIES})
+set_property(TARGET libsvgfill PROPERTY OUTPUT_NAME svgfill)
 
 add_executable(svgfill src/main.cpp)
 target_link_libraries(svgfill libsvgfill)
